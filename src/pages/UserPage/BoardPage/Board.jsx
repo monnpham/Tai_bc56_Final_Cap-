@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { PropagateLoader } from 'react-spinners';
 
 export default function Board() {
-    var projectId = useSelector((state) => state.userReducer.projectID);
+    const projectId = useSelector((state) => state.userReducer.projectID);
     const [project, setproject] = useState([])
     const [allMember, setAllMember] = useState([])
     const [taskStatus, setTaskStatus] = useState([])

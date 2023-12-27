@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Button, Checkbox, Form, Input, Layout } from "antd";
 import { userService } from "../../services/service";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_INFOR } from "../../redux/constant/user";
-import Sider from "antd/es/layout/Sider";
 
 export default function LoginPageMobile() {
     let navigate = useNavigate();

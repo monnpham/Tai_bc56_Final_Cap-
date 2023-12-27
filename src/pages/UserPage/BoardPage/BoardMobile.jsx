@@ -7,8 +7,7 @@ import toast from 'react-hot-toast';
 import { PropagateLoader } from 'react-spinners';
 
 export default function BoardMobile() {
-    const dispatch = useDispatch();
-    var projectId = useSelector((state) => state.userReducer.projectID);
+    const projectId = useSelector((state) => state.userReducer.projectID);
     const [project, setproject] = useState([])
     const [allMember, setAllMember] = useState([])
     const [taskStatus, setTaskStatus] = useState([])
@@ -26,6 +25,7 @@ export default function BoardMobile() {
     const [estimateTime, setEstimateTime] = useState("0");
     const [spentTime, setSpentTime] = useState("0");
     const [remainingTime, setRemainingTime] = useState(0);
+    console.log("🚀 ~ file: BoardMobile.jsx:28 ~ BoardMobile ~ remainingTime:", remainingTime)
     const [priorityEdit, setPriorityEdit] = useState({})
 
     const handleChange = (selected) => {
@@ -754,16 +754,7 @@ export default function BoardMobile() {
         },
 
     ];
-    const dropdownMenu = (record) => (
-        <div className='text-center' style={{ height: "400px", width: "450px", backgroundColor: "white", border: "1px solid gray", borderRadius: "5%" }}>
-            <p className='m-3' style={{ fontWeight: "500", fontSize: "22px" }}>Members</p>
-            <Table dataSource={record} columns={columnsMembers}
-                pagination={{
-                    pageSize: 4,
-                    total: record?.length,
-                }} />
-        </div>
-    );
+
     const onChangeEstimateTime = (ETime) => {
         let ET = {
             originalEstimate: ETime,
